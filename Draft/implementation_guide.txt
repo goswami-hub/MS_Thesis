@@ -1,0 +1,32 @@
+#########################Implementation: load_data ##############################################
+Input
+  input_path: Location of the zip file (including the file name)
+  annotation_path: Location of annotation within the zip file
+  output_path: Location where you want to extract the files 
+Output
+  A data frame of ground truth bounding box co-ordinates
+  A list of ground truth bounding box co-ordinates
+
+
+input_path= '/content/BCCD_New.zip'
+annotation_path = 'Annotations'
+output_path='/content'
+
+BCCDdf, BCCDlist = load_data(input_path, annotation_path, output_path)
+##################################################################################################
+
+############################Implementation : plot_annotation #####################################
+Input
+  img_path: Image path of input image
+  img_ann: List of annotations for input image, each annotation is a 
+              dictionary with xmin, ymin, xmax, ymax, cell_type
+Output
+  Image with bounding boxes
+
+img_path = '/content/JPEGImages/BloodImage_005.jpg'
+
+imgID = img.split('_')[-1].split('.')[0]
+img_ann = BCCDdf.loc[BCCDdf['ID']==int(imgID)]
+img_ann = img_ann.to_dict('records')
+plot_annotation(img_path, img_ann)
+##################################################################################################
