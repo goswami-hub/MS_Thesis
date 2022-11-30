@@ -1,0 +1,5 @@
+classes = 3
+train = /content/drive/MyDrive/UpGrad/LJMU_MS/Data/YOLO_00/YOLO/train.txt
+test = /content/drive/MyDrive/UpGrad/LJMU_MS/Data/YOLO_00/YOLO/test.txt
+names = /content/drive/MyDrive/UpGrad/LJMU_MS/Data/YOLO_00/YOLO/obj.names
+backup = /content/drive/MyDrive/UpGrad/LJMU_MS/Data/YOLO_00/YOLO/weights
